@@ -6,7 +6,7 @@ sudo apt update && sudo apt upgrade -y
 
 # Check for any issues in apt update
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while updating system. Exiting..."
+  echo "Error while updating system. Exiting..."
   exit 1
 fi
 
@@ -18,7 +18,7 @@ sudo apt install -y nodejs
 
 # Check if Node.js installed correctly
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing Node.js. Exiting..."
+  echo "Error while installing Node.js. Exiting..."
   exit 1
 fi
 
@@ -27,7 +27,7 @@ sudo npm install -g pm2
 
 # Check if PM2 installed correctly
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing PM2. Exiting..."
+  echo "Error while installing PM2. Exiting..."
   exit 1
 fi
 
@@ -36,7 +36,7 @@ sudo apt install -y apache2
 
 # Check if Apache2 installed correctly
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing Apache2. Exiting..."
+  echo "Error while installing Apache2. Exiting..."
   exit 1
 fi
 
@@ -51,7 +51,7 @@ if [[ "$INSTALL_MYSQL" == "y" || "$INSTALL_MYSQL" == "Y" ]]; then
 
   # Check if MySQL installed correctly
   if [ $? -ne 0 ]; then
-    echo "⚠️ Error while installing MySQL. Exiting..."
+    echo "Error while installing MySQL. Exiting..."
     exit 1
   fi
 
@@ -78,7 +78,7 @@ npm install
 
 # Check if npm install worked
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing dependencies in root folder. Exiting..."
+  echo "Error while installing dependencies in root folder. Exiting..."
   exit 1
 fi
 
@@ -90,7 +90,7 @@ npm run build  # Build the frontend for production
 
 # Check if frontend dependencies installed correctly
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing frontend dependencies or building the frontend. Exiting..."
+  echo "Error while installing frontend dependencies or building the frontend. Exiting..."
   exit 1
 fi
 
@@ -101,7 +101,7 @@ npm install
 
 # Check if backend dependencies installed correctly
 if [ $? -ne 0 ]; then
-  echo "⚠️ Error while installing backend dependencies. Exiting..."
+  echo "Error while installing backend dependencies. Exiting..."
   exit 1
 fi
 
