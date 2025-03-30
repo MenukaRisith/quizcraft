@@ -2,7 +2,7 @@ const db = require("../config/db.config");
 
 const liveTeams = new Map(); // quizId => Map<teamId, lastSeen>
 const cheatCounts = new Map(); // "quizId:teamId" => violation count
-const CHEATING_THRESHOLD = 3; // ✅ Configurable threshold
+const CHEATING_THRESHOLD = 3; //
 
 module.exports = (io) => ({
   healthCheck: (req, res) => {
