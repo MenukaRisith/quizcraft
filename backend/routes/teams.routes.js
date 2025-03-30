@@ -40,7 +40,7 @@ router.post("/register", registerLimiter, async (req, res) => {
   try {
     const sanitizedTeamName = validator.escape(team_name.trim());
 
-    // ✅ 1. Insert Team with quiz_id
+    // 1. Insert Team with quiz_id
     const [teamResult] = await connection.query(
       "INSERT INTO teams (team_name, quiz_id) VALUES (?, ?)",
       [sanitizedTeamName, quiz_id]
@@ -49,7 +49,7 @@ router.post("/register", registerLimiter, async (req, res) => {
 
     let firstUserId = null;
 
-    // ✅ 2. Insert Users (no password)
+    // 2. Insert Users (no password)
     for (let i = 0; i < members.length; i++) {
       const name = validator.escape(members[i].name?.trim() || "");
       const email = members[i].email?.trim().toLowerCase();
@@ -73,7 +73,7 @@ router.post("/register", registerLimiter, async (req, res) => {
       return res.status(500).json({ success: false, error: "Failed to create user" });
     }
 
-    // ✅ 3. Generate and store token
+    // 3. Generate and store token
     const token = generateToken();
     await connection.query(
       `INSERT INTO access_tokens (token, quiz_id, user_id, team_id, is_used)
