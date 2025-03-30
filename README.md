@@ -44,16 +44,16 @@ Clone the repository to your server:
 ```bash
 git clone https://github.com/yourusername/quizcraft.git
 cd quizcraft
+```
 
 ### 2. Run the Setup Script
 
 Run the provided shell script to set up the environment and install all dependencies:
 
-```markdown
 ```bash
 chmod +x setup.sh
 ./setup.sh
-
+```
 
 This script will:
 
@@ -69,8 +69,6 @@ This script will:
 ### 3. Domain and DNS Configuration
 
 Once the setup is complete, update your DNS settings to point to the server's IP address for your domain. The platform will be accessible at:
-
-```markdown
 
 http://<your_domain> or http://<server_ip>
 
