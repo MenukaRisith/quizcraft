@@ -67,7 +67,7 @@ module.exports = function (io) {
 
   router.get("/:quizId/leaderboard", controller.getLeaderboard);
 
-  // 🔌 Initialize WebSocket event listeners
+  // Initialize WebSocket event listeners
   controller.socketEvents();
 
   return router;
