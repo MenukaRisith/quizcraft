@@ -41,18 +41,18 @@ if (!isInitialized()) {
 } else {
   console.log("✅ QuizCraft initialized. Core routes enabled.");
 
-  // 🔐 Authentication
+  // Authentication
   app.use("/api/auth", require("./routes/auth.routes"));
 
-  // 🧠 Quiz Management (Admin + Coordinator)
+  // Quiz Management (Admin + Coordinator)
   app.use("/api/quizzes", require("./routes/quiz.routes"));
 
-  // 🤝 Team Registration
+  // Team Registration
   app.use("/api/teams", require("./routes/teams.routes"));
 
   app.use("/api", require("./routes/quizCoordinator.routes"));
 
-  // 🛡️ Admin Monitoring & Anti-Cheat Console (With Socket.IO)
+  // Admin Monitoring & Anti-Cheat Console (With Socket.IO)
   app.use("/api/admin/quiz", require("./routes/admin.quiz.routes")(io));
 }
 
