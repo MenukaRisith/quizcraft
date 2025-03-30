@@ -6,7 +6,7 @@ module.exports = function (io) {
   const router = express.Router();
   const controller = require("../controllers/admin.quiz.controller")(io);
 
-  // ✅ Health Check
+  // Health Check
   router.get("/", controller.healthCheck);
 
   // 🔍 Fetch active teams in the last 15s
@@ -17,7 +17,7 @@ module.exports = function (io) {
     controller.getLiveTeams
   );
 
-  // 🧾 Fetch audit logs of a specific team
+  // Fetch audit logs of a specific team
   router.get(
     "/:quizId/team/:teamId/logs",
     requireAuth,
@@ -25,7 +25,7 @@ module.exports = function (io) {
     controller.getLogs
   );
 
-  // ▶️ Start quiz
+  // Start quiz
   router.patch(
     "/:quizId/start",
     requireAuth,
@@ -33,7 +33,7 @@ module.exports = function (io) {
     controller.startQuiz
   );
 
-  // ⏹️ Stop quiz
+  // Stop quiz
   router.patch(
     "/:quizId/stop",
     requireAuth,
@@ -41,7 +41,7 @@ module.exports = function (io) {
     controller.stopQuiz
   );
 
-  // 🔒 Manually lock a team
+  // Manually lock a team
   router.patch(
     "/:quizId/team/:teamId/lock",
     requireAuth,
@@ -49,7 +49,7 @@ module.exports = function (io) {
     controller.lockTeam
   );
 
-  // 🔓 Unlock a team
+  // Unlock a team
   router.patch(
     "/:quizId/unlock-team/:teamId",
     requireAuth,
@@ -57,7 +57,7 @@ module.exports = function (io) {
     controller.unlockTeam
   );
 
-  // 🛑 Get all locked teams with reason
+  // Get all locked teams with reason
   router.get(
     "/:quizId/locked-teams",
     requireAuth,
