@@ -41,7 +41,6 @@ Follow these steps to set up **QuizCraft** on your server. You can run the entir
 
 Clone the repository to your server:
 
-```markdown
 ```bash
 git clone https://github.com/yourusername/quizcraft.git
 cd quizcraft
