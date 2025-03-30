@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-gray-800
+    dark:border-gray-600 dark:bg-gray-900 dark:text-white
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 transition;
+}

@@ -1,0 +1,19 @@
+{
+    "name": "quizcraft",
+    "scripts": {
+        "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+        "start": "concurrently \"cd quizcraft-frontend && npm start\" \"cd backend && node server.js\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.0.0"
+    },
+    "version": "1.0.0",
+    "main": "index.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "quizcraft": "file:"
+    }
+}
